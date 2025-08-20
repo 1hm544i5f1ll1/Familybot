@@ -1,14 +1,13 @@
 export interface AIRole {
   id: string;
   name: string;
-  type: 'nanny' | 'tutor' | 'trainer' | 'nutritionist' | 'coach' | 'advisor' | 'planner' | 'designer' | 'stylist' | 'instructor' | 'physician' | 'specialist';
+  type: 'nanny' | 'psychologist' | 'nutritionist' | 'trainer' | 'tutor' | 'coach' | 'financial' | 'travel' | 'designer' | 'stylist' | 'yoga' | 'physician' | 'pet' | 'assistant';
   description: string;
   capabilities: AICapability[];
-  autonomyLevel: 'full' | 'assisted' | 'supervised';
+  autonomyLevel: 'full' | 'assisted' | 'professional_required';
   professionalNetwork: ProfessionalContact[];
   aiModel: string;
   specializations: string[];
-  certifications: string[];
   languages: string[];
   availability: AvailabilitySchedule;
   performance: AIPerformanceMetrics;
@@ -19,7 +18,7 @@ export interface AICapability {
   id: string;
   name: string;
   description: string;
-  autonomyLevel: 'full' | 'assisted' | 'human_required';
+  autonomyLevel: 'full' | 'assisted' | 'professional_required';
   confidence: number;
   examples: string[];
 }
@@ -104,7 +103,7 @@ export interface AITask {
   status: 'pending' | 'in_progress' | 'completed' | 'escalated' | 'failed';
   assignedRole: string;
   familyMemberId: string;
-  autonomyLevel: 'full' | 'assisted' | 'human_required';
+  autonomyLevel: 'full' | 'assisted' | 'professional_required';
   estimatedDuration: number;
   actualDuration?: number;
   confidence: number;
@@ -120,7 +119,7 @@ export interface AITaskStep {
   id: string;
   description: string;
   status: 'pending' | 'in_progress' | 'completed' | 'failed';
-  autonomyLevel: 'full' | 'assisted' | 'human_required';
+  autonomyLevel: 'full' | 'assisted' | 'professional_required';
   confidence: number;
   result?: string;
   timestamp?: string;
@@ -131,24 +130,6 @@ export interface TaskFeedback {
   comment: string;
   improvements: string[];
   timestamp: string;
-}
-
-export interface ProfessionalMatchRequest {
-  roleType: string;
-  specialization: string[];
-  location: string;
-  budget: {
-    min: number;
-    max: number;
-  };
-  urgency: 'low' | 'medium' | 'high' | 'emergency';
-  requirements: string[];
-  preferences: {
-    gender?: string;
-    ageRange?: string;
-    experience?: string;
-    languages?: string[];
-  };
 }
 
 export interface AIDecision {

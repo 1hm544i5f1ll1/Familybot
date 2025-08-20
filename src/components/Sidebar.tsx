@@ -51,12 +51,12 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, onSectionChange, isCol
   const familyRoles = [
     { id: 'nanny', label: 'Nanny/Governess', icon: Heart },
     { id: 'tutor', label: 'Private Tutor', icon: GraduationCap },
-    { id: 'travel', label: 'Travel Planner', icon: Plane },
+    { id: 'mental', label: 'Psychologist', icon: Brain },
     { id: 'nutrition', label: 'Nutritionist', icon: Utensils },
     { id: 'fitness', label: 'Personal Trainer', icon: Dumbbell },
-    { id: 'mental', label: 'Mental Health', icon: Brain },
-    { id: 'design', label: 'Interior Design', icon: Palette },
     { id: 'financial', label: 'Financial Advisor', icon: Calculator },
+    { id: 'travel', label: 'Travel Planner', icon: Plane },
+    { id: 'design', label: 'Interior Designer', icon: Palette },
   ];
 
   const systemItems = [

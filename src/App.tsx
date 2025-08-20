@@ -17,6 +17,7 @@ import { TranscriptionPage } from './pages/TranscriptionPage';
 import { CompliancePage } from './pages/CompliancePage';
 import { FamilyMembersPage } from './pages/FamilyMembersPage';
 import { FamilyMemberDetailPage } from './pages/FamilyMemberDetailPage';
+import { AIRolesPage } from './pages/AIRolesPage';
 import { SchoolPage } from './pages/SchoolPage';
 import Settings from './pages/Settings';
 
@@ -70,14 +71,14 @@ function AppContent() {
               <Route path="/settings" element={<Settings />} />
               <Route path="/family" element={<FamilyMembersPage />} />
               <Route path="/family/:id" element={<FamilyMemberDetailPage />} />
-              <Route path="/nanny" element={<FamilyMembersPage />} />
-              <Route path="/tutor" element={<FamilyMembersPage />} />
-              <Route path="/travel" element={<FamilyMembersPage />} />
-              <Route path="/nutrition" element={<FamilyMembersPage />} />
-              <Route path="/fitness" element={<FamilyMembersPage />} />
-              <Route path="/mental" element={<FamilyMembersPage />} />
-              <Route path="/design" element={<FamilyMembersPage />} />
-              <Route path="/financial" element={<FamilyMembersPage />} />
+              <Route path="/nanny" element={<AIRolesPage />} />
+              <Route path="/tutor" element={<AIRolesPage />} />
+              <Route path="/travel" element={<AIRolesPage />} />
+              <Route path="/nutrition" element={<AIRolesPage />} />
+              <Route path="/fitness" element={<AIRolesPage />} />
+              <Route path="/mental" element={<AIRolesPage />} />
+              <Route path="/design" element={<AIRolesPage />} />
+              <Route path="/financial" element={<AIRolesPage />} />
             </Routes>
           </main>
         </div>
