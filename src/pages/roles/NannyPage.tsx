@@ -47,7 +47,6 @@ export const NannyPage: React.FC = () => {
   }, []);
 
   const loadChildren = async () => {
-    // Mock data
     const mockChildren: ChildProfile[] = [
       {
         id: '1',
@@ -100,7 +99,6 @@ export const NannyPage: React.FC = () => {
       </PageHeader>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        {/* Child Selection */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Children</h3>
           <div className="space-y-3">
@@ -126,11 +124,9 @@ export const NannyPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Main Content */}
         <div className="lg:col-span-3 space-y-6">
           {selectedChildData && (
             <>
-              {/* Today's Schedule */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-gray-900">Today's Schedule</h3>
@@ -154,7 +150,6 @@ export const NannyPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Development Milestones */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-gray-900">Development Milestones</h3>
@@ -177,40 +172,6 @@ export const NannyPage: React.FC = () => {
                           Achieved: {new Date(milestone.achievedAt).toLocaleDateString()}
                         </p>
                       )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Learning Activities */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Learning Activities</h3>
-                  <BookOpen className="w-5 h-5 text-blue-600" />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {selectedChildData.activities.map(activity => (
-                    <div key={activity.id} className="p-4 border border-gray-200 rounded-lg">
-                      <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-medium text-gray-900">{activity.name}</h4>
-                        <Activity className="w-4 h-4 text-purple-600" />
-                      </div>
-                      <p className="text-sm text-gray-600 mb-2">{activity.duration} minutes</p>
-                      <div className="flex items-center justify-between">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          activity.category === 'educational' ? 'bg-blue-100 text-blue-800' :
-                          activity.category === 'physical' ? 'bg-green-100 text-green-800' :
-                          activity.category === 'creative' ? 'bg-purple-100 text-purple-800' :
-                          'bg-orange-100 text-orange-800'
-                        }`}>
-                          {activity.category}
-                        </span>
-                        <StatusBadge 
-                          status={activity.completed ? 'completed' : 'pending'} 
-                          variant={activity.completed ? 'success' : 'warning'}
-                          size="sm"
-                        />
-                      </div>
                     </div>
                   ))}
                 </div>

@@ -106,7 +106,6 @@ export const PsychologistPage: React.FC = () => {
       </PageHeader>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        {/* Member Selection */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Family Members</h3>
           <div className="space-y-3">
@@ -139,11 +138,9 @@ export const PsychologistPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Main Content */}
         <div className="lg:col-span-3 space-y-6">
           {selectedMemberData && (
             <>
-              {/* Mood Overview */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                   <div className="flex items-center justify-between mb-2">
@@ -176,37 +173,6 @@ export const PsychologistPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Mood Tracking */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Recent Mood Entries</h3>
-                  <Calendar className="w-5 h-5 text-indigo-600" />
-                </div>
-                <div className="space-y-3">
-                  {selectedMemberData.moodEntries.map(entry => (
-                    <div key={entry.id} className="p-4 border border-gray-200 rounded-lg">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-medium text-gray-900">
-                          {new Date(entry.date).toLocaleDateString()}
-                        </span>
-                        <span className={`text-lg font-bold ${getMoodColor(entry.mood)}`}>
-                          {entry.mood}/10
-                        </span>
-                      </div>
-                      <p className="text-gray-600 mb-2">{entry.notes}</p>
-                      <div className="flex flex-wrap gap-1">
-                        {entry.triggers.map(trigger => (
-                          <span key={trigger} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-                            {trigger.replace('_', ' ')}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* CBT Exercises */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-gray-900">CBT Exercises</h3>
@@ -224,21 +190,14 @@ export const PsychologistPage: React.FC = () => {
                         />
                       </div>
                       <p className="text-sm text-gray-600 mb-3">{exercise.description}</p>
-                      <div className="flex items-center justify-between">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          exercise.type === 'breathing' ? 'bg-blue-100 text-blue-800' :
-                          exercise.type === 'mindfulness' ? 'bg-green-100 text-green-800' :
-                          exercise.type === 'cognitive' ? 'bg-purple-100 text-purple-800' :
-                          'bg-orange-100 text-orange-800'
-                        }`}>
-                          {exercise.type}
-                        </span>
-                        {exercise.completed && exercise.completedAt && (
-                          <span className="text-xs text-gray-500">
-                            {new Date(exercise.completedAt).toLocaleDateString()}
-                          </span>
-                        )}
-                      </div>
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        exercise.type === 'breathing' ? 'bg-blue-100 text-blue-800' :
+                        exercise.type === 'mindfulness' ? 'bg-green-100 text-green-800' :
+                        exercise.type === 'cognitive' ? 'bg-purple-100 text-purple-800' :
+                        'bg-orange-100 text-orange-800'
+                      }`}>
+                        {exercise.type}
+                      </span>
                     </div>
                   ))}
                 </div>
