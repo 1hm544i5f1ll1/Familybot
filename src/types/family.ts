@@ -11,6 +11,7 @@ export interface FamilyMember {
   goals: Goal[];
   actionableItems: ActionableItem[];
   calendar: CalendarEvent[];
+  timeline: TimelineEvent[];
 }
 
 export interface Goal {
@@ -67,6 +68,18 @@ export interface CalendarEvent {
     interval: number;
     endDate?: string;
   };
+}
+
+export interface TimelineEvent {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  type: 'achievement' | 'milestone' | 'activity' | 'assessment' | 'note';
+  category: string;
+  importance: 'low' | 'medium' | 'high';
+  attachments?: string[];
+  createdBy: string;
 }
 
 export interface AIRole {

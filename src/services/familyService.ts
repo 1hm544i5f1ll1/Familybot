@@ -58,6 +58,18 @@ const mockFamilyMembers: FamilyMember[] = [
         priority: 'high',
         status: 'scheduled'
       }
+    ],
+    timeline: [
+      {
+        id: 't1',
+        title: 'Started Financial Planning',
+        description: 'Activated financial advisor role and set savings goals',
+        date: '2024-10-01',
+        type: 'milestone',
+        category: 'financial',
+        importance: 'high',
+        createdBy: 'system'
+      }
     ]
   }
 ];

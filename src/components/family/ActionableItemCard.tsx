@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckSquare, Clock, AlertTriangle, User } from 'lucide-react';
+import { CheckSquare, Clock, AlertTriangle, User, Calendar } from 'lucide-react';
 import { ActionableItem } from '../../types/family';
 
 interface ActionableItemCardProps {
