@@ -18,7 +18,7 @@ import { CompliancePage } from './pages/CompliancePage';
 import { FamilyMembersPage } from './pages/FamilyMembersPage';
 import { FamilyMemberDetailPage } from './pages/FamilyMemberDetailPage';
 import { SchoolPage } from './pages/SchoolPage';
-import Settings from './components/Settings';
+import Settings from './pages/Settings';
 
 function App() {
   const [activeSection, setActiveSection] = useState('overview');
